@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fafafa;
+    color: #2e2f42;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.form input {
+    width: 272px;
+    height: 40px;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #2e2f42;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 250ms ease-in-out;
+}
+
+.form input:hover {
+    border-color: #000;
+}
+
+.form input:focus {
+    border-color: #4e75ff;
+}
+
+.form input::placeholder {
+    color: #808080;
+    opacity: 0.8;
+}
+
+.form button {
+    width: 91px;
+    height: 40px;
+    padding: 8px 16px;
+    background-color: #4e75ff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 250ms ease-in-out;
+}
+
+.form button:hover {
+    background-color: #6c8cff;
+}
+
+/**/
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.gallery-item {
+    width: 360px;
+    border: 1px solid #808080;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
+}
+
+.gallery-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image {
+    display: block;
+    width: 100%;
+    height: 152px;
+    object-fit: cover;
+}
+
+/**/
+
+.info {
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    align-items: center;
+    height: 48px;
+}
+
+.info-item {
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+}
+
+.info-item b {
+    display: block;
+    font-weight: 600;
+}
+
+/**/
+
+:root {
+    --loader-size: 48px;
+    --loader-thickness: 5px;
+    --loader-color: #000;
+}
+
+.loader {
+    width: var(--loader-size);
+    height: var(--loader-size);
+    border: var(--loader-thickness) solid var(--loader-color);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: none;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: 20px auto;
+}
+
+.loader.is-visible {
+    display: inline-block;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
